@@ -1,0 +1,17 @@
+### Ruby ###
+*.gem
+*.rbc
+Gemfile.lock
+.ruby-version
+.rbenv-version
+.ruby-gemset
+
+## Documentation cache and generated files:
+/.yardoc/
+/_yardoc/
+/doc/
+/rdoc/
+
+## Environment normalisation:
+/.bundle/
+/lib/bundler/man/
