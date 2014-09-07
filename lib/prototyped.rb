@@ -12,17 +12,27 @@ module Prototyped
 
   def set_prototype(prototype)
     set_property(:prototype, prototype)
+    set_prototype_instanse_variables(prototype.instance_variables)
   end
 
-  def call_prototype_method(*arguments, proc)
-    proc.call(*arguments)
+  def set_prototype_instanse_variables(instance_variables)
+    instance_variables.each { |v| set_property(v[1..-1], nil) }
   end
 
   def method_missing(method_name, *arguments, &block)
-    call_prototype_method(*arguments, @prototype.method(method_name).to_proc) || super
+    call_protype_method(method_name, *arguments, &block) || super
   end 
+
+  def call_protype_method(method_name, *arguments, &block)
+    set_prototype_instanse_variables(@prototype.instance_variables)
+    set_method(method_name, @prototype.method(method_name).to_proc)
+    send(method_name, *arguments)
+  end
   
   def respond_to_missing?(method_name, include_private = false)
     @prototype.methods.include? method_name || super 
   end
 end
+
+
+
