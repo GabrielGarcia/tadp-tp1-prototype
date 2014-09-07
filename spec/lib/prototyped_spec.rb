@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Prototype' do
+describe 'Prototyped' do
 
   context 'when a basic test example is requiered' do
     it 'returns true' do 
