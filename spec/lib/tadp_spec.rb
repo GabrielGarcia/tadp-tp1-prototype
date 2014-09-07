@@ -51,7 +51,6 @@ describe 'tadp' do
     espadachin.potencial_defensivo = 10
     espadachin.potencial_ofensivo = 20
     espadachin.set_method(:potencial_ofensivo, proc { @potencial_ofensivo + self.potencial_espada * self.habilidad })
-    binding.pry
     espadachin.atacar_a(guerrero)
     
     expect(guerrero.energia).to eq(75)

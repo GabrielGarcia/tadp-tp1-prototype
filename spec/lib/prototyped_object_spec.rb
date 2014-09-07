@@ -14,11 +14,11 @@ describe 'PrototypedObject' do
 
     before { prototype.set_property(property, value) }
         
-    it 'creates an instace variable' do  
+    it 'creates an instance variable' do  
       expect(prototype.instance_variables).to include("@#{property}".to_sym)
     end     
 
-    it 'creates an accesor' do
+    it 'creates an accessor' do
       expect(prototype.methods).to include(property)
     end
 
@@ -36,7 +36,7 @@ describe 'PrototypedObject' do
     end
   end
 
-  context 'when an instace is prototyped through set_prototype' do
+  context 'when an instance is prototyped through set_prototype' do
     before { prototyped.set_prototype(prototype) }
 
     it 'implements its prototype methods' do

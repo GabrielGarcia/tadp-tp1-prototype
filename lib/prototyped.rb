@@ -26,6 +26,7 @@ module Prototyped
   def call_protype_method(method_name, *arguments, &block)
     set_prototype_instanse_variables(@prototype.instance_variables)
     set_method(method_name, @prototype.method(method_name).to_proc)
+    # set_method(method_name, @prototype.method(method_name).unbind) --> TypeError: can't bind singleton method to a different class
     send(method_name, *arguments)
   end
   
