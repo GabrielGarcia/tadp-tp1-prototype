@@ -23,9 +23,9 @@ describe 'tadp' do
                                           end
                                         })
     guerrero.set_method(:recibe_danio, proc { |diferencia| self.energia = self.energia - diferencia })
-    otro_guerrero = guerrero.clone 
+    otro_guerrero = guerrero.clone
     guerrero.atacar_a otro_guerrero
-    
+
     expect(otro_guerrero.energia).to eq(80)
   end
 
@@ -50,10 +50,11 @@ describe 'tadp' do
     espadachin.energia =  30
     espadachin.potencial_defensivo = 10
     espadachin.potencial_ofensivo = 20
+
     espadachin.set_method(:potencial_ofensivo, proc { @potencial_ofensivo + self.potencial_espada * self.habilidad })
+
     espadachin.atacar_a(guerrero)
-    
     expect(guerrero.energia).to eq(75)
-  end   
+  end
 
 end
