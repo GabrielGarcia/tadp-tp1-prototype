@@ -37,8 +37,7 @@ module Prototyped
 
   def call_protype_method(method_name, *arguments, &block)
     set_prototype_instanse_variables(@prototype.instance_variables - self.instance_variables)
-    set_method(method_name, @prototype.send("#{method_name}_get_proc".to_sym))
-    send(method_name, *arguments)
+    instance_exec(*arguments, &@prototype.send("#{method_name}_get_proc".to_sym))
   end
 
   def respond_to_missing?(method_name, include_private = false)
