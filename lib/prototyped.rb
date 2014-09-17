@@ -22,6 +22,10 @@ module Prototyped
                          proc)
   end
 
+  def set_properties(properties)
+    properties.each { |property, value| set_property(property.to_s, value) }
+  end
+
   def set_prototype(prototype)
     set_property(:prototype, prototype)
     set_prototype_instanse_variables(prototype.instance_variables)

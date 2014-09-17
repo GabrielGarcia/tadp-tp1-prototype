@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'prototyped_object'
 
-describe 'tadp' do
+describe 'tadp 4.1' do
 
   it 'Un guerrrero recibe una nueva propiedad' do
     #Inicialización de un guerrero

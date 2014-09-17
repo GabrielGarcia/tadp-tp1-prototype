@@ -6,7 +6,7 @@ describe 'PrototypedObject' do
   let(:prototype) { PrototypedObject.new }
   let(:prototyped) { PrototypedObject.new }
   let(:property) { :new_property }
-  let(:value) { rand(10) }
+  let(:value) { 50 }
   let(:method) { :new_method }
   let(:block) { proc { puts 'test bloc' } }
 
